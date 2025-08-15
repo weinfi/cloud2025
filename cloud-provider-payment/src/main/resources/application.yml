@@ -5,6 +5,3 @@ spring:
     name: cloud-payment-service
   profiles:
     active: dev
-  graphql:
-    graphiql:
-      enabled: true
