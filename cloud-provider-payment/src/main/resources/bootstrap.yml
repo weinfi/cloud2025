@@ -1,0 +1,37 @@
+#consul agent -dev -node=my-node-name
+#spring:
+#  application:
+#    name: cloud-payment-service
+#  cloud:
+#    consul:
+#      host: localhost
+#      port: 8500
+#      config:
+#        enabled: true
+#        format: YAML
+#        data-key: config
+#        watch:
+#          enabled: true
+#      discovery:
+#        enabled: true
+#        instance-id: ${spring.application.name}:${server.port}
+#        health-check-path: /actuator/health
+#        health-check-interval: 15s
+#        prefer-ip-address: true
+#        ip-address: ${spring.cloud.client.ip-address}
+#        port: ${server.port}
+spring:
+  application:
+    name: cloud-payment-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+      config:
+        profile-separator: '-'
+        format: yaml
+        watch:
+          enabled: true
+          waited-time: 5
