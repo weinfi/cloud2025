@@ -3,7 +3,7 @@ package com.leo.cloud.entities;
 import java.util.Arrays;
 import java.util.List;
 
-record Author(String id, String firstName, String lastName) {
+public record Author(String id, String firstName, String lastName) {
 
     private static List<Author> authors = Arrays.asList(
             new Author("author-1", "Joanne", "Rowling"),
